@@ -13,26 +13,6 @@ name = 'gin_api_admin'
 pass = '123456789'
 user = 'root'
 
--- 2. 创建数据库 --
-CREATE DATABASE gin_api_admin DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
--- 创建管理员表 --
-CREATE TABLE `admin` (
-     `id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
-     `username` varchar(32) NOT NULL DEFAULT '' COMMENT '用户名',
-     `password` varchar(100) NOT NULL DEFAULT '' COMMENT '密码',
-     `nickname` varchar(60) NOT NULL DEFAULT '' COMMENT '昵称',
-     `mobile` varchar(20) NOT NULL DEFAULT '' COMMENT '手机号',
-     `is_used` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否启用(1:是 -1:否)',
-     `created_user` varchar(60) NOT NULL DEFAULT '' COMMENT '创建人',
-     `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-     `updated_user` varchar(60) NOT NULL DEFAULT '' COMMENT '更新人',
-     `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-     PRIMARY KEY (`id`),
-     UNIQUE KEY `uniq_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='管理员表';
-```
-
 ## 启动
 
 ```
